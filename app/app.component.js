@@ -9,9 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var menu_component_1 = require('./shared/menu.component');
 var places_list_component_1 = require('./places/places-list.component');
+var place_detail_component_1 = require('./places/place-detail.component');
+var places_service_1 = require('./places/places.service');
 var tapas_list_component_1 = require('./tapas/tapas-list.component');
 var AppComponent = (function () {
     function AppComponent() {
@@ -21,10 +24,12 @@ var AppComponent = (function () {
             selector: 'tp-app',
             template: "<h1>Tapeando</h1>\n            <tp-menu></tp-menu>\n            <router-outlet></router-outlet>",
             directives: [router_deprecated_1.ROUTER_DIRECTIVES, menu_component_1.MenuComponent],
-            providers: [router_deprecated_1.ROUTER_PROVIDERS]
+            providers: [router_deprecated_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, places_service_1.PlaceService]
         }),
         router_deprecated_1.RouteConfig([
             { path: '/places', name: 'Places', component: places_list_component_1.PlacesListComponent, useAsDefault: true },
+            { path: '/places/add', name: 'AddPlace', component: place_detail_component_1.PlaceDetailComponent },
+            { path: '/places/:id', name: 'PlaceDetail', component: place_detail_component_1.PlaceDetailComponent },
             { path: '/tapas', name: 'Tapas', component: tapas_list_component_1.TapasListComponent }
         ]), 
         __metadata('design:paramtypes', [])

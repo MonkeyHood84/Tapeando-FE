@@ -1,0 +1,6 @@
+<h2>Places</h2>
+<a [routerLink]="['AddPlace']">[Create a New One]</a>
+<div *ngFor="#place of places">
+    <a (click)='delete(place, $event)'>[Delete]</a>
+    <a [routerLink]="['PlaceDetail', {id: place.id}]">[Edit]</a> {{ place.name }}
+</div>
