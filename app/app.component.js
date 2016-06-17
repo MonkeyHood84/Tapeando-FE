@@ -22,7 +22,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'tp-app',
-            template: "<h1>Tapeando</h1>\n            <tp-menu></tp-menu>\n            <router-outlet></router-outlet>",
+            template: "<div>\n                <tp-menu></tp-menu>        \n                <router-outlet></router-outlet>\n            </div>",
             directives: [router_deprecated_1.ROUTER_DIRECTIVES, menu_component_1.MenuComponent],
             providers: [router_deprecated_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, places_service_1.PlaceService]
         }),
@@ -30,7 +30,9 @@ var AppComponent = (function () {
             { path: '/places', name: 'Places', component: places_list_component_1.PlacesListComponent, useAsDefault: true },
             { path: '/places/add', name: 'AddPlace', component: place_detail_component_1.PlaceDetailComponent },
             { path: '/places/:id', name: 'PlaceDetail', component: place_detail_component_1.PlaceDetailComponent },
-            { path: '/tapas', name: 'Tapas', component: tapas_list_component_1.TapasListComponent }
+            { path: '/tapas', name: 'Tapas', component: tapas_list_component_1.TapasListComponent },
+            { path: '/tapas/add', name: 'AddTapa', component: tapas_list_component_1.TapasListComponent },
+            { path: '/tapas/:id', name: 'TapaDetail', component: tapas_list_component_1.TapasListComponent }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
