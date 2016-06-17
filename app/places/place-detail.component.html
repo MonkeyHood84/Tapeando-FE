@@ -1,7 +1,20 @@
-<h3>Places: {{place.name ? place.name : 'Add new one'}}</h3>
-<div>
-    <label>name: </label>
-    <input [(ngModel)]="place.name" placeholder="name" />
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><a (click)="goToPlaces()">Places</a>: {{place.name ? place.name : 'Add new one'}}</h4></div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" [(ngModel)]="place.name" id="name" class="form-control " placeholder="Place Name">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer text-right">
+            <button (click)="goToPlaces()" type="button" class="btn btn-sm" title="Cancel changes">Cancel</button>
+            <button (click)="save()" type="button" class="btn btn-sm btn-primary" title="Save changes">Save</button>
+        </div>
+    </div>
 </div>
-<button (click)="goToPlaces()">Back</button>
-<button (click)="save()">Save</button>
