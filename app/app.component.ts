@@ -11,9 +11,10 @@ import { TapasListComponent } from './tapas/tapas-list.component'
 
 @Component({
   selector: 'tp-app',
-  template: `<h1>Tapeando</h1>
-            <tp-menu></tp-menu>
-            <router-outlet></router-outlet>`,
+  template: `<div>
+                <tp-menu></tp-menu>        
+                <router-outlet></router-outlet>
+            </div>`,
   directives: [ROUTER_DIRECTIVES, MenuComponent],
   providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, PlaceService]
 })
@@ -21,6 +22,8 @@ import { TapasListComponent } from './tapas/tapas-list.component'
     { path: '/places', name: 'Places', component: PlacesListComponent, useAsDefault: true},
     { path: '/places/add', name: 'AddPlace', component: PlaceDetailComponent},
     { path: '/places/:id', name: 'PlaceDetail', component: PlaceDetailComponent},
-    { path: '/tapas', name: 'Tapas', component: TapasListComponent}
+    { path: '/tapas', name: 'Tapas', component: TapasListComponent},
+    { path: '/tapas/add', name: 'AddTapa', component: TapasListComponent},
+    { path: '/tapas/:id', name: 'TapaDetail', component: TapasListComponent}
 ])
 export class AppComponent { }

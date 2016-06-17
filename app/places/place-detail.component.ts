@@ -31,7 +31,7 @@ export class PlaceDetailComponent implements OnInit {
         console.log(this.place);
         this._placeService.savePlace(this.place)
             .subscribe(
-                place => {console.log('subscribed', place), this.goToPlace(place)},
+                place => {console.log('subscribed', place), this.goToPlaces()},
                 error => this.errorMessage = <any>error);
     }
     
@@ -41,7 +41,7 @@ export class PlaceDetailComponent implements OnInit {
     }
     
     private goToPlaces():void{
-        this._router.navigate(['PlacesList']);
+        this._router.navigate(['Places']);
     }
     
 }
